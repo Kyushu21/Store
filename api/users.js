@@ -17,9 +17,9 @@ const users = {
             
             body:JSON.stringify(
                 {
-                    email:'John@gmail.com',
-                    username:'johnd',
-                    password:'m38rmF$',
+                    email: email,
+                    username: user,
+                    password: password,
                     name:{
                         firstname:'John',
                         lastname:'Doe'
@@ -45,7 +45,8 @@ const users = {
             // process the JSON
             // this json is the response from the server
             // proceder a la pantalla incial
-            alert('Usuario registrado');    
+            alert('Usuario registrado'+ json.id); 
+            window.location.href='home.html';   
         })
         .catch(error => console.log('Error: ', error));
     },
@@ -85,14 +86,12 @@ const users = {
     },
 
     deleteUser: (params) => {
-        //const { email } = params.body;
         console.log(params);
-        // Delete user from database
         fetch('https://fakestoreapi.com/users',{
             method:"DELETE",
             body:JSON.stringify(
                 {
-                    email: email
+                    user: username
                 }
             )
         })
@@ -100,6 +99,39 @@ const users = {
             .then(json=>console.log(json))
             .catch(error=>console.log('Error: ', error));
         res.status(200).json({ message: 'User deleted' });
-    }
+    },
+    loginUser: (event) => {
+        event.preventDefault();
+        const form = new FormData(event.target);
+        const username = form.get('username');
+        const password = form.get('password');
 
+        fetch('https://fakestoreapi.com/auth/login', {
+            method: "POST",
+            body: JSON.stringify({
+                username: username,
+                password: password
+            }),
+            headers: {
+                "Content-Type": "application/json"
+            }
+        })
+        .then(res => {
+            if (res.ok) {
+                return res.json();
+            } else {
+                throw new Error('Login failed');
+            }
+        })
+        .then(json => {
+            console.log(json);
+            alert('¡Inicio de sesión exitoso!');
+            window.location.href='home.html';
+        })
+        .catch(error => {
+            console.error('Error: ', error);
+            alert('Error al iniciar sesión. Por favor, verifica tus credenciales.');
+        });
+    }
 }
+    
