@@ -10,7 +10,6 @@
 <body>
 
         <main>
-
             <div class="contenedor__todo">
                 <div class="caja__trasera">
                     <div class="caja__trasera-login">
@@ -30,23 +29,24 @@
                     <!--Login-->
                     <form action="php/login.php" class="formulario__login" method ="post">
                         <h2>Iniciar Sesión</h2>
-                        <input type="text" placeholder="Correo Electronico" name="email">
+                        <input type="text" placeholder="Usuario" name="email">
                         <input type="password" placeholder="Contraseña" name="password" >
                         <button type ="submit">Entrar</button>
                     </form>
 
                     <!--Register-->
-                    <form action="php/register.php" class="formulario__register" method="post">
+                    <form onsubmit="users.addUser(event)" class="formulario__register">
                         <h2>Regístrarse</h2>
-                        <input type="text" placeholder="Nombre completo" name="name">
-                        <input type="text" placeholder="Correo Electronico" name="email">
-                        <input type="text" placeholder="Usuario" name="user">
-                        <input type="password" placeholder="Contraseña"name="password">
+                        <input name="name" type="text" maxlength="30" placeholder="Nombre completo" required>
+                        <input name="email" type="text" maxlength="30" placeholder="Correo Electronico" required>
+                        <input name="username" type="text" maxlength="30" placeholder="Usuario" required>
+                        <input name="password" type="password" placeholder="Contraseña" required>
                         <button type="submit">Registrarse</button>
                     </form>
                 </div>
             </div>
         </main>
         <script src="js/script.js"></script>
+        <script src="api/users.js"></script>
     </body>
 </html>
