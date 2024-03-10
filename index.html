@@ -8,27 +8,34 @@
 <body>
 
 
-<header>
-    <div>
-        <img src="logo_tienda.png" alt="Logotipo de la tienda">
-    </div>
-    <nav>
-        <ul>
+    <header>
+        <div class="logo">
+          <img src="images/icono-removebg-preview.png" alt="Logotipo de la tienda" height="120px" width="120px">
+        </div>
+        <nav class="menu-principal">
+          <ul>
+            <li><a href="#Hombres">Hombres</a></li>
+            <li><a href="#Mujeres">Mujeres</a></li>
             <li><a href="#categorias">Categorías</a></li>
             <li><a href="#contacto">Contacto</a></li>
-            <li><a href="#carrito">Carrito</a></li>
-        </ul>
-    </nav>
-    <div>
-        <a href="#login">Iniciar Sesión</a>
-        <a href="#registro">Registrarse</a>
-    </div>
-</header>
+          </ul>
+        </nav>
+        <div class="acciones-usuario">
+            <div class="search-bar">
+                <input type="text" placeholder="Buscar">
+                <button type="submit"><i class="fa-solid fa-search"></i></button>
+              </div>
+          <a href="#login"><i class="fa-solid fa-user"></i></a>
+          <a href="#Carrito"><i class="fa-solid fa-cart-shopping"></i></a>
+        </div>
+      </header>
+      
+      
+      
+      <section id="slider-container">
+        <div class="slider position"> </div>
+    </section>
 
-
-<section id="slider">
-    
-</section>
 
 
 <section id="productos-destacados">
@@ -78,5 +85,6 @@
     </div>
 </footer>
 
+<script src="https://kit.fontawesome.com/81581fb069.js" crossorigin="anonymous"></script>
 </body>
 </html>
