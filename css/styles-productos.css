@@ -1,0 +1,259 @@
+:root {
+    --color-rojo: #990100;
+    --color-gris: #333333;
+    --color-negro: #0000;
+    --color-blanco: #fff;
+    --color-gris-claro: #bfbdc1;
+  }
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: "Roboto", sans-serif;
+  }
+
+/*****************/
+/*Productos - Nia*/
+/****************/
+
+.titulo h2 {
+    color: var(--color-gris);
+    font-size: 35px;
+    text-align: justify;
+    margin: 20px 30px;
+  }
+  .clothes {
+    align-items: center;
+    text-align: center;
+  }
+  .clothes-cards {
+    width: 20%;
+    margin: 20px;
+    border-radius: 6px;
+    overflow: hidden;
+    padding-top: 40px;
+    display: inline-block;
+    box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.2);
+  }
+  .image-clothes img {
+    width: 100%;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+  }
+  .title-clothes {
+    text-align: justify;
+    padding: 10px;
+    margin: 10px;
+  }
+  .title-clothes h2 {
+    font-size: 20px;
+  }
+  .description-clothes {
+    text-align: justify;
+    padding: 10px;
+    margin: 10px;
+  }
+  .description-clothes p {
+    font-size: 18px;
+  }
+  
+  @media only screen and (max-width: 768px) {
+    .titulo h2 {
+      font-size: 28px;
+      margin: 15px 20px;
+    }
+  
+    .clothes-cards {
+      width: 45%;
+    }
+  }
+  
+  @media only screen and (max-width: 480px) {
+    .titulo h2 {
+      font-size: 22px;
+      margin: 10px 15px;
+    }
+  
+    .clothes-cards {
+      width: 80%;
+    }
+  }
+  /***********************/
+  /*Producto uno en uno*/
+  /***********************/
+  .products-container {
+    line-height: 1.5;
+  }
+  .card-wrapper {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .product-imgs img {
+    width: 100%;
+    display: block;
+  }
+  .img-display {
+    overflow: hidden;
+  }
+  .img-showcase {
+    display: flex;
+    width: 100%;
+    transition: all 0.5s ease;
+  }
+  .img-showcase img {
+    min-width: 100%;
+  }
+  .img-select {
+    display: flex;
+  }
+  .img-item {
+    margin: 0.3rem;
+  }
+  .img-item:nth-child(1),
+  .img-item:nth-child(2),
+  .img-item:nth-child(3) {
+    margin-right: 0;
+  }
+  .img-item:hover {
+    opacity: 0.8;
+  }
+  .product-content {
+    padding: 2rem 1rem;
+  }
+  .product-title {
+    font-size: 3rem;
+    text-transform: capitalize;
+    font-weight: 700;
+    position: relative;
+    color: var(--color-gris);
+    margin: 1rem 0;
+  }
+  .product-title::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 4px;
+    width: 80px;
+    background: var(--color-gris);
+  }
+  
+  .product-rating span {
+    font-weight: 600;
+    color: var(--color-gris);
+  }
+  .product-price {
+    margin: 1rem 0;
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--color-rojo);
+  }
+  .product-price span {
+    font-weight: 400;
+  }
+  .last-price span {
+    color: var(--color-rojo);
+    text-decoration: line-through;
+  }
+  .new-price span {
+    color: var(--color-gris);
+  }
+  .product-detail h2 {
+    color: var(--color-negro);
+    padding-bottom: 0.6rem;
+  }
+  .product-detail p {
+    font-size: 1.5rem;
+    padding: 0.3rem;
+    opacity: 0.8;
+  }
+  .product-detail ul {
+    margin: 1rem 0;
+    font-size: 18px;
+  }
+  .product-detail ul li {
+    list-style: none;
+    background-size: 18px;
+    padding-left: 1.7rem;
+    margin: 1rem 0;
+    font-weight: 900;
+  }
+  .product-detail ul li span {
+    font-weight: 400;
+  }
+  .purchase-info {
+    margin: 1.5rem 0;
+  }
+  .purchase-info input,
+  .purchase-info .btn {
+    border: 1.5px solid var(--color-blanco);
+    border-radius: 25px;
+    text-align: center;
+    padding: 0.45rem 0.8rem;
+    outline: 0;
+    margin-right: 0.2rem;
+    margin-bottom: 1rem;
+  }
+  .purchase-info input {
+    width: 60px;
+  }
+  .purchase-info .btn {
+    cursor: pointer;
+    color: #fff;
+  }
+  .purchase-info .btn:first-of-type {
+    background: var(--color-gris);
+  }
+  .purchase-info .btn:last-of-type {
+    background: var(--color-rojo);
+  }
+  .purchase-info .btn:hover {
+    opacity: 0.9;
+  }
+  .size-select {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  .size-select p {
+    width: 70px;
+    padding: 0.5rem;
+    font-size: 1.3rem;
+  }
+  .size-select input:checked + span {
+    color: var(--color-rojo);
+    font-weight: 600;
+  }
+  .size-select input {
+    display: none;
+  }
+  .size-select span {
+    padding: 5px;
+    margin-right: 10px;
+    font-size: 1.3rem;
+    cursor: pointer;
+  }
+  
+  @media screen and (min-width: 992px) {
+    .card {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 1.5rem;
+    }
+    .card-wrapper {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .product-imgs {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .product-content {
+      padding-top: 0;
+    }
+  }
