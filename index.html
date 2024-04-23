@@ -1,90 +1,121 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    
+  <head>
     <title>Tu Tienda Online</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-
-
+    <link rel="stylesheet" href="css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+  </head>
+  <body>
     <header>
-        <div class="logo">
-          <img src="images/icono-removebg-preview.png" alt="Logotipo de la tienda" height="120px" width="120px">
+      <div class="logo">
+        <img
+          src="images/icono-removebg-preview.png"
+          alt="Logotipo de la tienda"
+          height="120px"
+          width="120px"
+        />
+      </div>
+      <nav class="menu-principal">
+        <ul>
+          <li><a href="#Hombres">Hombres</a></li>
+          <li><a href="#Mujeres">Mujeres</a></li>
+          <li><a href="#categorias">Categorías</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+      <div class="acciones-usuario">
+        <div class="search-bar">
+          <input type="text" placeholder="Buscar" />
+          <button type="submit"><i class="fa-solid fa-search"></i></button>
         </div>
-        <nav class="menu-principal">
-          <ul>
-            <li><a href="#Hombres">Hombres</a></li>
-            <li><a href="#Mujeres">Mujeres</a></li>
-            <li><a href="#categorias">Categorías</a></li>
-            <li><a href="#contacto">Contacto</a></li>
-          </ul>
-        </nav>
-        <div class="acciones-usuario">
-            <div class="search-bar">
-                <input type="text" placeholder="Buscar">
-                <button type="submit"><i class="fa-solid fa-search"></i></button>
-              </div>
-          <a href="#login"><i class="fa-solid fa-user"></i></a>
-          <a href="#Carrito"><i class="fa-solid fa-cart-shopping"></i></a>
+        <a href="#login"><i class="fa-solid fa-user"></i></a>
+        <a href="#Carrito"><i class="fa-solid fa-cart-shopping"></i></a>
+      </div>
+    </header>
+
+    <!-- Slider main container -->
+    <div class="swiper">
+      <!-- Addi tional required wrapper -->
+      <div class="swiper-wrapper">
+        <!-- Slides -->
+        <div class="swiper-slide">
+          <img
+            src="images/pexels-francesco-paggiaro-2294342.jpg"
+            class="imgslide"
+          />
         </div>
-      </header>
-      
-      
-      
-      <section id="slider-container">
-        <div class="slider position"> </div>
+        <div class="swiper-slide">
+          <img
+            src="images/pexels-sebastiaan-stam-1311590.jpg"
+            class="imgslide"
+          />
+        </div>
+        <div class="swiper-slide">
+          <img src="images/slide2.jpg" class="imgslide" />
+        </div>
+        ...
+      </div>
+      <!-- If we need pagination -->
+      <div class="swiper-pagination"></div>
+
+      <!-- If we need navigation buttons -->
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+
+      <!-- If we need scrollbar -->
+      <div class="swiper-scrollbar"></div>
+    </div>
+
+    <section id="slider-container">
+      <div class="slider position"></div>
     </section>
 
-
-
-<section id="productos-destacados">
-    <h2>Productos Destacados</h2>
-    <div class="producto">
-        <img src="producto1.jpg" alt="Producto 1">
+    <section id="productos-destacados">
+      <h2>Productos Destacados</h2>
+      <div class="producto">
+        <img src="producto1.jpg" alt="Producto 1" />
         <p>Nombre del Producto 1</p>
         <p>Precio: $XX.XX</p>
-    </div>
-    
-</section>
+      </div>
+    </section>
 
-
-<section id="categorias">
-    <h2>Categorías</h2>
-    <div class="categoria">
+    <section id="categorias">
+      <h2>Categorías</h2>
+      <div class="categoria">
         <a href="#ropa-hombres">Ropa para Hombres</a>
-    </div>
-    <div class="categoria">
+      </div>
+      <div class="categoria">
         <a href="#ropa-mujeres">Ropa para Mujeres</a>
-    </div>
-   
-</section>
+      </div>
+    </section>
 
+    <section id="ofertas">
+      <h2>Ofertas Especiales</h2>
+    </section>
 
-<section id="ofertas">
-    <h2>Ofertas Especiales</h2>
-  
-</section>
-
-
-<footer>
-    <div id="contacto">
+    <footer>
+      <div id="contacto">
         <h3>Información de Contacto</h3>
-        
-    </div>
-    <div id="politicas">
+      </div>
+      <div id="politicas">
         <h3>Políticas de la Tienda</h3>
         <ul>
-            <li><a href="#terminos">Términos y Condiciones</a></li>
-            <li><a href="#privacidad">Política de Privacidad</a></li>
+          <li><a href="#terminos">Términos y Condiciones</a></li>
+          <li><a href="#privacidad">Política de Privacidad</a></li>
         </ul>
-    </div>
-    <div id="redes-sociales">
+      </div>
+      <div id="redes-sociales">
         <h3>Redes Sociales</h3>
-        
-    </div>
-</footer>
-
-<script src="https://kit.fontawesome.com/81581fb069.js" crossorigin="anonymous"></script>
-</body>
+      </div>
+    </footer>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="js/script.js"></script>
+    <script
+      src="https://kit.fontawesome.com/81581fb069.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
