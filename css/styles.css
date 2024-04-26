@@ -1,176 +1,139 @@
-:root {
-  --color-rojo: #990100;
-  --color-gris: #333333;
-  --color-negro: #0000;
-  --color-blanco: #fff;
-  --color-gris-claro: #bfbdc1;
-}
-* {
+*{
+  font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  text-decoration: none;
-  font-family: "Roboto", sans-serif;
+
 }
 
-body {
-  background-image: url(/images/bg3.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-attachment: fixed;
-}
-
-main {
-  width: 100%;
+/* ************ */
+/* ***** HEADER ***** */
+/* ************ */
+header {
+  color: #000;
   padding: 20px;
-  margin: auto;
-  margin-top: 100px;
-}
-
-.contenedor__todo {
-  width: 100%;
-  max-width: 800px;
-  margin: auto;
-  position: relative;
-}
-
-.caja__trasera {
-  width: 100%;
-  padding: 10px 20px;
   display: flex;
-  justify-content: center;
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
-  background-color: rgba(0, 128, 255, 0.5);
+  justify-content: space-between;
+  align-items: center;
+  border: #000;
 }
 
-.caja__trasera div {
-  margin: 100px 40px;
-  color: white;
-  transition: all 500ms;
+/* ************ */
+/* ***** NAVBAR ***** */
+/* ************ */
+
+.logo {
+  flex: 1;
+  text-align: center; 
 }
 
-.caja__trasera div p,
-.caja__trasera button {
-  margin-top: 30px;
+.logo img {
+  max-width: 100%;
+  height: auto;
 }
 
-.caja__trasera div h3 {
-  font-weight: 400;
-  font-size: 26px;
+.menu-principal {
+  order: -1; 
 }
 
-.caja__trasera div p {
-  font-size: 16px;
-  font-weight: 300;
+.menu-principal ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
 }
 
-.caja__trasera button {
-  padding: 10px 40px;
-  border: 2px solid #fff;
-  font-size: 14px;
-  background: transparent;
-  font-weight: 600;
-  cursor: pointer;
-  color: white;
-  outline: none;
-  transition: all 300ms;
+.menu-principal li {
+  margin-right: 20px;
 }
 
-.caja__trasera button:hover {
-  background: #fff;
-  color: #46a2fd;
+.menu-principal a {
+  text-decoration: none;
+  color: #000;
+  transition: color 0.3s ease;
 }
 
-/*Formularios*/
+.menu-principal a:hover {
+  color: red;
+}
 
-.contenedor__login-register {
+.acciones-usuario {
   display: flex;
   align-items: center;
-  width: 100%;
-  max-width: 380px;
+}
+
+.acciones-usuario a {
+  margin-left: 20px;
+  text-decoration: none;
+  color:#000;
+ 
+  transition: color 0.3s ease;
+}
+
+.acciones-usuario a:hover {
+  color: red;
+}
+
+.acciones-usuario a {
+  font-size: 20px; 
+}
+
+
+.acciones-usuario i {
+  font-size: 20px; 
+}
+
+/* ************ */
+/* ***** SERCH-BAR ***** */
+/* ************ */
+
+.search-bar {
   position: relative;
-  top: -185px;
-  left: 10px;
-
-  /*La transicion va despues del codigo JS*/
-  transition: left 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  width: 250px; 
 }
 
-.contenedor__login-register form {
-  width: 100%;
-  padding: 80px 20px;
-  background: white;
-  position: absolute;
-  border-radius: 20px;
+.search-bar input {
+  padding: 13px; 
+  border: 1px solid #000; 
+  border-radius: 20px; 
+  outline: none; 
 }
 
-.contenedor__login-register form h2 {
-  font-size: 30px;
-  text-align: center;
-  margin-bottom: 20px;
-  color: #46a2fd;
-}
-
-.contenedor__login-register form input {
-  width: 100%;
-  margin-top: 20px;
-  padding: 10px;
-  border: none;
-  background: #f2f2f2;
-  font-size: 16px;
-  outline: none;
-}
-
-.contenedor__login-register form button {
-  padding: 10px 40px;
-  margin-top: 40px;
-  border: none;
-  font-size: 14px;
-  background: #46a2fd;
-  font-weight: 600;
+.search-bar button {
+  padding: 10px; 
+  background-color: #fff; 
+  color: #000; 
+  border: 1px solid #000; 
+  border-radius: 20px; 
   cursor: pointer;
-  color: white;
-  outline: none;
 }
 
-.formulario__login {
-  opacity: 1;
-  display: block;
-}
-.formulario__register {
-  display: none;
+.search-bar button:hover {
+  background-color: red; 
+  border-color: #000; 
 }
 
-@media screen and (max-width: 850px) {
-  main {
-    margin-top: 50px;
-  }
+/* ************ */
+/* ***** SLIDER ***** */
+/* ************ */
 
-  .caja__trasera {
-    max-width: 350px;
-    height: 300px;
-    flex-direction: column;
-    margin: auto;
-  }
-
-  .caja__trasera div {
-    margin: 0px;
-    position: absolute;
-  }
-
-  /*Formularios*/
-
-  .contenedor__login-register {
-    top: -10px;
-    left: -5px;
-    margin: auto;
-  }
-
-  .contenedor__login-register form {
-    position: relative;
-  }
+.imgslide {
+  width: 100%;
+  object-fit: cover;
+}
+.swiper {
+  width: 100%;
+  height: 500px;
 }
 
 
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  
