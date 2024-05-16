@@ -17,6 +17,15 @@ header {
   align-items: center;
   border: #000;
 }
+/* Estilo para el logotipo */
+.logo img {
+  filter: grayscale(100%); 
+  transition: filter 0.3s; 
+}
+.logo img:hover {
+  filter: grayscale(0%);
+}
+
 
 /* ************ */
 /* ***** NAVBAR ***** */
@@ -133,72 +142,81 @@ header {
   align-items: center;
   padding-top: 1em;
 }
-
-.img-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.img-container img {
-  width: 200px;
-  margin: 20px;
-  height: 250px;
-  object-fit: cover;
-  object-position: center;
-  border: 1px solid #ddd;
-  transition: 0.9s ease;
-}
-.img-container img:hover{
-  cursor: crosshair;
-  width: 250px;
-  filter: contrast(120%);
-}
-
-.img-caption {
-  text-align: center;
-  margin-top: 0px;
-  font-size: 18px;
-  font-weight: bold;
+/* ************ */
+/* ***** NEW STOCK ***** */
+/* ************ */
+/* New Stock */
+.container {
+  margin-top: 50px;
 }
 
 h2 {
   font-weight: bold;
-  text-align: center; /* Centra el texto horizontalmente */
-  margin-top: 50px;
+  text-align: center;
   font-family: 'Lato', sans-serif;
-  
 }
 
-.image-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+.image-container,
+.img-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Esto crea cinco columnas iguales */
+  gap: 30px;
+  justify-items: center; 
 }
 
-.image-container img {
-  width: 20%;
-  margin: 10px;
+.image-container img,
+.img-container img {
+  width: 100%;
+  margin: 30px;
+  max-width: 200px; 
+  height: 300px;
+  object-fit: cover;
   border: 1px solid #ddd;
-  transition: 0.9s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.image-container img:hover{
-  cursor: crosshair;
-  width: 220px;
-  filter: contrast(120%);
+.image-container img:hover,
+.img-container img:hover {
+  cursor: pointer;
+  transform: scale(1.05); /* Aumenta ligeramente el tamaño */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); /* Añade una sombra */
 }
 
 
+/* ************ */
+/* ***** FOOTER ***** */
+/* ************ */
 
 
+footer {
+  background-color: #f2f2f2;
+  padding: 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+}
 
+footer div {
+  margin: 0 20px;
+}
 
+footer h3 {
+  color: #333;
+}
 
-  
-  
-  
-  
-  
-  
-  
-  
+footer ul {
+  list-style: none;
+  padding: 0;
+}
+
+footer ul li {
+  margin-bottom: 5px;
+}
+
+footer ul li a {
+  color: #555;
+  text-decoration: none;
+}
+
+footer ul li a:hover {
+  color: #eb0000;
+}

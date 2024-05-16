@@ -46,7 +46,7 @@ const users = {
             // this json is the response from the server
             // proceder a la pantalla incial
             alert('Usuario registrado'+ json.id); 
-            window.location.href='home.html';   
+            window.location.href='index.html';   
         })
         .catch(error => console.log('Error: ', error));
     },

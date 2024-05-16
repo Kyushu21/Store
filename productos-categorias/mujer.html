@@ -7,6 +7,32 @@
     <link rel="stylesheet" href="../css/styles-productos.css" />
   </head>
   <body>
+    <header>
+      <div class="logo">
+        <img
+          src="../images/icono.png"
+          alt="Logotipo de la tienda"
+          height="120px"
+          width="120px"
+        />
+      </div>
+      <nav class="menu-principal">
+        <ul>
+          <li><a href="hombre.html">Hombres</a></li>
+          <li><a href="mujer.html">Mujeres</a></li>
+          <li><a href="../index.html">Inicio</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+      <div class="acciones-usuario">
+        <div class="search-bar">
+          <input type="text" placeholder="Buscar" />
+          <button type="submit"><i class="fa-solid fa-search"></i></button>
+        </div>
+        <a href="../registrologin.html"><i class="fa-solid fa-user"></i></a>
+        <a href="#Carrito"><i class="fa-solid fa-cart-shopping"></i></a>
+      </div>
+    </header>
     <div class="clothes">
       <!--Producto 1-->
       <div class="clothes-cards">
@@ -56,10 +82,7 @@
       <!--Producto 4-->
       <div class="clothes-cards">
         <div class="image-clothes">
-          <img
-            src="../css/img-tienda/Mujer/Pantalon Cargo Negro.jpg"
-            alt=""
-          />
+          <img src="../css/img-tienda/Mujer/Pantalon Cargo Negro.jpg" alt="" />
         </div>
         <div class="title-clothes">
           <h2>Pantalon cargo negro</h2>
@@ -99,6 +122,50 @@
     </div>
 
     <div id="contenedorProducto"></div>
+    <footer>
+      <div id="contacto">
+        <h3>Información de Contacto</h3>
+        <p>Dirección: Calle UES, Ciudad UES</p>
+        <p>Teléfono: +123456789</p>
+        <p>Correo electrónico: TENGEN@hotmail.com</p>
+      </div>
+      <div id="politicas">
+        <h3>Políticas de la Tienda</h3>
+        <ul>
+          <li><a href="#terminos">Términos y Condiciones</a></li>
+          <li><a href="#privacidad">Política de Privacidad</a></li>
+        </ul>
+      </div>
+      <div id="redes-sociales">
+        <h3>Redes Sociales</h3>
+        <ul>
+          <li>
+            <a href="https://facebook.com"
+              ><i class="fab fa-facebook"></i> Facebook</a
+            >
+          </li>
+          <li>
+            <a href="https://twitter.com"
+              ><i class="fab fa-twitter"></i> Twitter</a
+            >
+          </li>
+          <li>
+            <a href="https://instagram.com"
+              ><i class="fab fa-instagram"></i> Instagram</a
+            >
+          </li>
+          <li>
+            <a href="https://linkedin.com"
+              ><i class="fab fa-linkedin"></i> LinkedIn</a
+            >
+          </li>
+        </ul>
+      </div>
+    </footer>
+    <script
+      src="https://kit.fontawesome.com/81581fb069.js"
+      crossorigin="anonymous"
+    ></script>
     <script src="../js/productoM.js"></script>
   </body>
 </html>

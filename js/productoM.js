@@ -109,7 +109,6 @@ function obtenerParametroURL(nombre) {
     </div>
   </div>
   </div>
-    <button onclick= "volverAProductos()">Volver a Productos</button>
   `;
   
   //funcion para volver a la pagina de productos
