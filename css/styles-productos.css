@@ -96,7 +96,7 @@ header {
 
 .search-bar {
   position: relative;
-  width: 250px; 
+  width: 300px; 
 }
 
 .search-bar input {
@@ -119,6 +119,54 @@ header {
   background-color: red; 
   border-color: #000; 
 }
+
+/*****************/
+/*Productos GRID*/
+/****************/
+
+.product-grid-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  flex-wrap: wrap;
+  margin-top: 60px;
+}
+
+.product-container {
+  width: 20%;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  margin-bottom: 5rem;
+  margin-right: 10px;
+}
+
+.product-image-wrapper {
+  height: 500px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.product-image {
+  width: 100%;
+  transition: transform 0.5s, opacity 0.5s;
+}
+
+.product-image:hover {
+  opacity: 0.6;
+  transform: scale(1.1);
+}
+
+.product-info-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  margin-top: 1rem;
+}
+
 /*****************/
 /*Productos - Nia*/
 /****************/
@@ -134,18 +182,24 @@ header {
     text-align: center;
   }
   .clothes-cards {
-    width: 20%;
-    margin: 20px;
+    width: 25%;
+    margin: 10px;
     border-radius: 6px;
     overflow: hidden;
     padding-top: 40px;
     display: inline-block;
-    box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.2);
   }
   .image-clothes img {
     width: 100%;
     border-top-right-radius: 5px;
     border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+  .image-clothes img:hover {
+    transform: scale(1.1);
+    opacity: 0.8;
   }
   .title-clothes {
     text-align: justify;
@@ -154,6 +208,7 @@ header {
   }
   .title-clothes h2 {
     font-size: 20px;
+    margin-top: 15px;
   }
   .description-clothes {
     text-align: justify;
@@ -218,7 +273,6 @@ header {
 .logo img:hover {
   filter: grayscale(0%);
 }
-
 
   .products-container {
     line-height: 1.5;
@@ -377,8 +431,8 @@ header {
 /* ***** FOOTER ***** */
 /* ************ */
 
-
 footer {
+  margin-top: 60px;
   background-color: #f2f2f2;
   padding: 20px;
   display: flex;
