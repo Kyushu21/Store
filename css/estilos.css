@@ -7,9 +7,8 @@
 }
 
 body{
-    background-color: black;
+   background-color: #ffdede;
 }
-
 
 main{
     width: 100%;
@@ -32,7 +31,9 @@ main{
     justify-content: center;
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
-    background-color: rgba(0, 128, 255, 0.5);
+    background-color: #b20a0a;
+    border-radius: 20px;
+    
 
 }
 
@@ -41,7 +42,6 @@ main{
     color: white;
     transition: all 500ms;
 }
-
 
 .caja__trasera div p,
 .caja__trasera button{
@@ -72,11 +72,10 @@ main{
 
 .caja__trasera button:hover{
     background: #fff;
-    color: #46A2FD;
+    color: #ff0000;
 }
 
 /*Formularios*/
-
 .contenedor__login-register{
     display: flex;
     align-items: center;
@@ -92,27 +91,34 @@ main{
 
 .contenedor__login-register form{
     width: 100%;
-    padding: 80px 20px;
+    padding: 60px 30px;
     background: white;
     position: absolute;
     border-radius: 20px;
+}
+
+.contenedor__login-register form h4{
+    margin-bottom: 0px;
+   
 }
 
 .contenedor__login-register form h2{
     font-size: 30px;
     text-align: center;
     margin-bottom: 20px;
-    color: #46A2FD;
+    color: #000000;
 }
 
 .contenedor__login-register form input{
     width: 100%;
-    margin-top: 20px;
+    margin-top: 5px;
+    margin-bottom: 20px;
     padding: 10px;
     border: none;
     background: #F2F2F2;
     font-size: 16px;
     outline: none;
+    border-radius: 10px;
 }
 
 .contenedor__login-register form button{
@@ -120,16 +126,30 @@ main{
     margin-top: 40px;
     border: none;
     font-size: 14px;
-    background: #46A2FD;
+    background: #ff2c2c;
     font-weight: 600;
     cursor: pointer;
     color: white;
     outline: none;
+    align-items: center;
+
 }
 
+button {
+    display: block;
+    margin: 0 auto;
+    border-radius: 5px;
+}
 
-
-
+.logo img {
+    
+    height: 120px;
+    width:  120px;
+    align-items: center;
+}
+.logo{
+    text-align: center;
+ }
 .formulario__login{
     opacity: 1;
     display: block;
@@ -137,8 +157,6 @@ main{
 .formulario__register{
     display: none;
 }
-
-
 
 @media screen and (max-width: 850px){
 
