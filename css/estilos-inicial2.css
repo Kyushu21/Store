@@ -118,14 +118,10 @@
   column-gap: 2.5rem;
 }
 /* NUEVO */
-.new-collection {
-  overflow: hidden; /* For animation ScrollReveal */
-}
 
 .new-collection section {
   padding: 2.5rem 0 2rem;
 }
-
 .new-collection img {
   max-width: 100%;
   height: auto;
@@ -136,7 +132,6 @@
   margin-top: 3rem;
   margin-bottom: 3rem;
 }
-
 .new-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -298,14 +293,3 @@ footer ul li a:hover {
   color: #eb0000;
 }
 
-/*******ANIMACION*****************/
-@keyframes fade {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-/*RESPONSIVE*/
