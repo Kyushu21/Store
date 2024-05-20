@@ -8,13 +8,16 @@
     <link rel="stylesheet" type="text/css" href="css/estilos.css">
 </head>
 <body>
+   
     <main>
+
         <div class="contenedor__todo">
             <div class="caja__trasera">
                 <div class="caja__trasera-login">
                     <h3>¿Ya tienes una cuenta?</h3>
                     <p>Inicia sesión para entrar en la página</p>
                     <button id="btn__iniciar-sesion">Iniciar Sesión</button>
+                    
                 </div>
                 <div class="caja__trasera-register">
                     <h3>¿Aún no tienes una cuenta?</h3>
@@ -27,19 +30,41 @@
             <div class="contenedor__login-register">
                 <!--Login-->
                 <form onsubmit="users.loginUser(event)" class="formulario__login" method="post">
+                    
+                    <div class="logo">
+                        <img
+                          src="images/icono.png"
+                          alt="Logotipo de la tienda"
+                         
+                        />
+                      </div>
+                    
                     <h2>Iniciar Sesión</h2>
-                    <input type="text" placeholder="Usuario" name="username">
-                    <input type="password" placeholder="Contraseña" name="password">
-                    <button type="submit">Entrar</button>
+                     <h4>Nombre:</h4>
+                    <input type="text" placeholder="Ingrese su usuario" name="username">
+                    <h4>Contraseña:</h4>
+                    <input type="password" placeholder="Ingrese su contraseña" name="password">
+                    <button type="submit">Ingresar</button>
                 </form>                    
 
                 <!--Register-->
                 <form onsubmit="users.addUser(event)" class="formulario__register">
-                    <h2>Regístrarse</h2>
-                    <input name="name" type="text" maxlength="30" placeholder="Nombre completo" required>
-                    <input name="email" type="text" maxlength="30" placeholder="Correo Electronico" required>
-                    <input name="username" type="text" maxlength="30" placeholder="Usuario" required>
-                    <input name="password" type="password" placeholder="Contraseña" required>
+                    <div class="logo">
+                        <img
+                          src="images/icono.png"
+                          alt="Logotipo de la tienda"
+                         
+                        />
+                      </div>
+                    <h2>Crea una cuenta</h2>
+                    <h4>Nombre:</h4>
+                    <input name="name" type="text" maxlength="30" placeholder="Ingrese su nombre completo" required>
+                    <h4>Correo:</h4>
+                    <input name="email" type="text" maxlength="30" placeholder="Ingrese su correo electronico" required>
+                    <h4>Usuario:</h4>
+                    <input name="username" type="text" maxlength="30" placeholder="Crea un usuario" required>
+                    <h4>Contraseña:</h4>
+                    <input name="password" type="password" placeholder="Crea una contraseña" required>
                     <button type="submit">Registrarse</button>
                 </form>
             </div>
