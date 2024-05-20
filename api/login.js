@@ -1,6 +1,3 @@
-
-//const baseUrl = 'https://api.escuelajs.co/api/v1/auth/login';
-
 const loginApi = {
 
     registerUser: (event) => {
@@ -78,13 +75,16 @@ const loginApi = {
                 throw new Error('Login failed');
             }
         })
-        .then(json => {
-            console.log(json);
-            alert('¡Inicio de sesión exitoso!');
+        .then(json => {        
+            console.log('refresh token ', json.access_token);
+            console.log('access token ', json.refresh_token);
+            localStorage.setItem('access_token', json.access_token);
+            localStorage.setItem('refresh_token', json.refresh_token);
+            isLoggedIn = true;
             window.location.href='home.html';
         })
         .catch(error => {
-            console.error('Error: ', error);
+            console.log('Error: ', error);
             alert('Error al iniciar sesión. Por favor, verifica tus credenciales.');
         });
     }
