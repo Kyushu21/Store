@@ -26,7 +26,7 @@
             <!--Formulario de Login y registro-->
             <div class="contenedor__login-register">
                 <!--Login-->
-                <form onsubmit="users.loginUser(event)" class="formulario__login" method="post">
+                <form onsubmit="loginApi.loginUser(event)" class="formulario__login" method="post">
                     <h2>Iniciar Sesión</h2>
                     <input type="text" placeholder="Usuario" name="username">
                     <input type="password" placeholder="Contraseña" name="password">
@@ -34,7 +34,7 @@
                 </form>                    
 
                 <!--Register-->
-                <form onsubmit="users.addUser(event)" class="formulario__register">
+                <form onsubmit="loginApi.registerUser(event)" class="formulario__register">
                     <h2>Regístrarse</h2>
                     <input name="name" type="text" maxlength="30" placeholder="Nombre completo" required>
                     <input name="email" type="text" maxlength="30" placeholder="Correo Electronico" required>
