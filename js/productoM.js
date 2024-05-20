@@ -25,7 +25,7 @@ function obtenerParametroURL(nombre) {
               src="../css/img-tienda/Mujer/${nombreProducto}.jpg"
             />
             <img
-              src=".../css/img-tienda/Mujer//${nombreProducto}.jpg"
+              src="../css/img-tienda/Mujer/${nombreProducto}.jpg"
             />
             <img
               src="../css/img-tienda/Mujer/${nombreProducto}.jpg"
