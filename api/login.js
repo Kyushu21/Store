@@ -1,8 +1,9 @@
 
-const baseUrl = 'https://api.escuelajs.co/api/v1/auth/login';
-const users = {
+//const baseUrl = 'https://api.escuelajs.co/api/v1/auth/login';
 
-    addUser: (event) => {
+const loginApi = {
+
+    registerUser: (event) => {
         event.preventDefault();
         //TODO validate form
         const form = new FormData(event.target);
@@ -56,13 +57,13 @@ const users = {
     loginUser: (event) => {
         event.preventDefault();
         const form = new FormData(event.target);
-        const username = form.get('username');
+        const email = form.get('username');
         const password = form.get('password');
 
-        fetch('https://fakestoreapi.com/auth/login', {
+        fetch('https://api.escuelajs.co/api/v1/auth/login', {
             method: "POST",
             body: JSON.stringify({
-                username: username,
+                email: email,
                 password: password
             }),
             headers: {
@@ -73,6 +74,7 @@ const users = {
             if (res.ok) {
                 return res.json();
             } else {
+                //TODO: add alert to show error
                 throw new Error('Login failed');
             }
         })
@@ -83,34 +85,6 @@ const users = {
         })
         .catch(error => {
             console.error('Error: ', error);
-
-
-            // Crear un nuevo elemento div
-            let modal = document.createElement('div');
-            modal.innerHTML = `
-            <div class="modal" tabindex="-1" role="dialog">
-              <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title">Modal title</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
-                  <div class="modal-body">
-                    <p>Modal body text goes here.</p>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            `;
-
-// Añadir el div al cuerpo del documento
-            document.body.appendChild(modal);
             alert('Error al iniciar sesión. Por favor, verifica tus credenciales.');
         });
     }

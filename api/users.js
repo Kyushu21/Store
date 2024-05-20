@@ -1,5 +1,5 @@
 
-const baseUrl = 'https://fakestoreapi.com/';
+//const baseUrl = 'https://fakestoreapi.com/';
 const users = {
 
     addUser: (event) => {
