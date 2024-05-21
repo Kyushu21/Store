@@ -116,53 +116,7 @@ header {
 /* ***** SLIDER ***** */
 /* ************ */
 
-#slider-container {
-  position: relative;
-  overflow: hidden;
+.swiper {
+  width: 100%;
+  height: 300px;
 }
-
-.slider {
-  background-size: cover;
-  height: 550px; 
-  border-radius: 5px;
-  animation: animate 10s infinite linear;
-}
-
-
-@keyframes animate {
-  0% {
-    background-image: url(images/pexels-francesco-paggiaro-2294342.jpg);
-  }
-
-  50% {
-    background-image: url(images/slide2.jpg);
-  }
-
-  100% {
-    background-image: url(images/pexels-sebastiaan-stam-1311590.jpg);
-  }
-}
-
-/* ************ */
-/* ***** PRODUCTOS ***** */
-/* ************ */
-
-#productos-destacados {
-  padding: 20px; 
-}
-
-
-
-
-
-
-
-
-  
-  
-  
-  
-  
-  
-  
-  
