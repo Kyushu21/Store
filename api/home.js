@@ -1,5 +1,5 @@
 
-const baseUrl = 'http://localhost:3001';
+const baseUrl = 'https://truly-trusted-ostrich.ngrok-free.app';
 const home = {
     onInit: () => {
         home.getCarusel();
