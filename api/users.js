@@ -1,5 +1,5 @@
 
-
+//const baseUrl = 'https://fakestoreapi.com/';
 const users = {
 
     addUser: (event) => {
@@ -12,7 +12,7 @@ const users = {
         const password = form.get('password');
         
         // Add user to database
-        fetch('https://fakestoreapi.com/users',{
+        fetch(`${baseUrl}/users`,{
             method:"POST",
             
             body:JSON.stringify(
@@ -130,6 +130,34 @@ const users = {
         })
         .catch(error => {
             console.error('Error: ', error);
+
+
+            // Crear un nuevo elemento div
+            let modal = document.createElement('div');
+            modal.innerHTML = `
+            <div class="modal" tabindex="-1" role="dialog">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <p>Modal body text goes here.</p>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            `;
+
+// Añadir el div al cuerpo del documento
+            document.body.appendChild(modal);
             alert('Error al iniciar sesión. Por favor, verifica tus credenciales.');
         });
     }

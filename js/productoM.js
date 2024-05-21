@@ -120,3 +120,24 @@ function obtenerParametroURL(nombre) {
   function verProducto(nombreProducto) {
     window.location.href = `productoM.html?producto=${nombreProducto}`; //Redirige a la página del producto con el nombre del producto como parametro
   }
+
+  function addImagesCarousel() {
+    const carrousel = document.getElementById('carousel');    
+    images = ['../css/img-tienda/Mujer/image1.png',
+              '../css/img-tienda/Mujer/image2.png'];
+
+    images.forEach((image, index) => {
+      if(index === 0){
+        carrousel.innerHTML += `
+        <div class="carousel-item active">
+          <img src="${image}" class="d-block w-100" alt="...">
+        </div>`
+      }else{
+        carrousel.innerHTML += `
+        <div class="carousel-item">
+          <img src="${image}" class="d-block w-100" alt="...">
+        </div>`
+      }
+    });
+
+  }
