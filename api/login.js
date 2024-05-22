@@ -1,6 +1,6 @@
 
-//const baseUrl = 'https://truly-trusted-ostrich.ngrok-free.app';
-const baseUrl = 'http://localhost:3001';
+const baseUrl = 'https://truly-trusted-ostrich.ngrok-free.app';
+//const baseUrl = 'http://localhost:3001';
 
 const loginApi = {
     onInit: () => {
@@ -21,7 +21,10 @@ const loginApi = {
         // Add user to database
         fetch(`${baseUrl}/users`,{
             method:"POST",
-            
+            headers: {
+                "ngrok-skip-browser-warning": "123456",
+                "user-agent": "PostmanRuntime/7.26.8",
+            },
             body:JSON.stringify(
                 {
                     email: email,
@@ -48,10 +51,7 @@ const loginApi = {
         .then(res => {            
             return res.json();
         })
-        .then(json => {
-            // process the JSON
-            // this json is the response from the server
-            // proceder a la pantalla incial
+        .then(json => {            
             console.log(json);  
             alert('Usuario registrado'); 
             window.location.href='home.html';   
@@ -74,7 +74,8 @@ const loginApi = {
                 password: password
             }),
             headers: {
-                "Content-Type": "application/json"
+                "ngrok-skip-browser-warning": "123456",
+                "user-agent": "PostmanRuntime/7.26.8",
             }
         })
         .then(res => {

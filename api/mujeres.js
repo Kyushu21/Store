@@ -82,8 +82,9 @@ const mujeres = {
         fetch(`${baseUrl}/api/v1/products/?categoryId=9`,{
             method:"GET",
             headers: {
-                'Content-Type': 'application/json'
-            }                                    
+                "ngrok-skip-browser-warning": "123456",
+                "user-agent": "PostmanRuntime/7.26.8",
+            }                                   
         })
         .then(res => {
             return res.json();
