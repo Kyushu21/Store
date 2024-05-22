@@ -4,9 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hombre</title>
-    <link rel="stylesheet" href="../css/styles-productos.css" />
-    
-    
+    <link rel="stylesheet" href="../css/styles-productos.css" />        
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <!-- <link rel="stylesheet" href="https:/90/cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"> -->
   </head>
@@ -65,27 +63,11 @@
     </div>
 
    <!--PRODUCTOS-->      
-    <div class="clothes">
-      <!--Producto 1-->
-      <div class="clothes-cards">
-        <div class="image-clothes">
-          <img src="../css/img-tienda/Hombre/Camiseta Blanca de Gatos.jpg" />
-        </div>
-        <div class="title-clothes">
-          <h2>Camiseta blanca de gatos</h2>
-        </div>
-        <div class="description-clothes">
-          <p>MXN $330</p>
-          <button
-            onclick="verProducto('Camiseta Blanca de Gatos')"
-            class="buttonVermas"
-          >
-            Ver
-          </button>
-        </div>
-      </div>
-      <!--Producto 2-->
-      <div class="clothes-cards">
+    <div id="productos" class="clothes">
+      <!--Producto cargados dinamicamente desde el API-->
+      
+      
+      <!-- <div class="clothes-cards">
         <div class="image-clothes">
           <img src="../css/img-tienda/Hombre/Pantalon Cargo Blanco.jpg" />
         </div>
@@ -102,7 +84,7 @@
           </button>
         </div>
       </div>
-      <!--Producto 3-->
+      
       <div class="clothes-cards">
         <div class="image-clothes">
           <img src="../css/img-tienda/Hombre/Camiseta Beige.jpg" alt="" />
@@ -117,7 +99,7 @@
           </button>
         </div>
       </div>
-      <!--Producto 4-->
+      
       <div class="clothes-cards">
         <div class="image-clothes">
           <img src="../css/img-tienda/Hombre/Short Cargo Beige.jpg" alt="" />
@@ -134,7 +116,7 @@
           </button>
         </div>
       </div>
-      <!--Producto 5-->
+      
       <div class="clothes-cards">
         <div class="image-clothes">
           <img src="../css/img-tienda/Hombre/Sueter Blanco.jpg" alt="" />
@@ -148,56 +130,53 @@
             Ver
           </button>
         </div>
-      </div>
-
-
-      <footer>
-        <div id="contacto">
-          <h3>Información de Contacto</h3>
-          <p>Dirección: Calle UES, Ciudad UES</p>
-          <p>Teléfono: +123456789</p>
-          <p>Correo electrónico: TENGEN@hotmail.com</p>
-        </div>
-        <div id="politicas">
-          <h3>Políticas de la Tienda</h3>
-          <ul>
-            <li><a href="#terminos">Términos y Condiciones</a></li>
-            <li><a href="#privacidad">Política de Privacidad</a></li>
-          </ul>
-        </div>
-        <div id="redes-sociales">
-          <h3>Redes Sociales</h3>
-          <ul>
-            <li>
-              <a href="https://facebook.com"
-                ><i class="fab fa-facebook"></i> Facebook</a
-              >
-            </li>
-            <li>
-              <a href="https://twitter.com"
-                ><i class="fab fa-twitter"></i> Twitter</a
-              >
-            </li>
-            <li>
-              <a href="https://instagram.com"
-                ><i class="fab fa-instagram"></i> Instagram</a
-              >
-            </li>
-            <li>
-              <a href="https://linkedin.com"
-                ><i class="fab fa-linkedin"></i> LinkedIn</a
-              >
-            </li>
-          </ul>
-        </div>
-      </footer>
+      </div>       -->
     </div>
-    <div id="contenedorProducto"></div>
-    <script
-      src="https://kit.fontawesome.com/81581fb069.js"
-      crossorigin="anonymous"
-    ></script>
-    <script src="../js/productoH.js"></script>
+    
+    <!-- <div id="contenedorProducto"></div> -->
+
+    <footer>
+      <div id="contacto">
+        <h3>Información de Contacto</h3>
+        <p>Dirección: Calle UES, Ciudad UES</p>
+        <p>Teléfono: +123456789</p>
+        <p>Correo electrónico: TENGEN@hotmail.com</p>
+      </div>
+      <div id="politicas">
+        <h3>Políticas de la Tienda</h3>
+        <ul>
+          <li><a href="#terminos">Términos y Condiciones</a></li>
+          <li><a href="#privacidad">Política de Privacidad</a></li>
+        </ul>
+      </div>
+      <div id="redes-sociales">
+        <h3>Redes Sociales</h3>
+        <ul>
+          <li>
+            <a href="https://facebook.com"
+              ><i class="fab fa-facebook"></i> Facebook</a
+            >
+          </li>
+          <li>
+            <a href="https://twitter.com"
+              ><i class="fab fa-twitter"></i> Twitter</a
+            >
+          </li>
+          <li>
+            <a href="https://instagram.com"
+              ><i class="fab fa-instagram"></i> Instagram</a
+            >
+          </li>
+          <li>
+            <a href="https://linkedin.com"
+              ><i class="fab fa-linkedin"></i> LinkedIn</a
+            >
+          </li>
+        </ul>
+      </div>
+    </footer>
+    <script src="https://kit.fontawesome.com/81581fb069.js" crossorigin="anonymous"></script>
+    <!-- <script src="../js/productoH.js"></script> -->
     <script src="../api/hombres.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   </body>
