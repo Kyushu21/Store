@@ -1,8 +1,10 @@
 
-const baseUrl = 'https://truly-trusted-ostrich.ngrok-free.app';
-const home = {
+// const baseUrl = 'https://truly-trusted-ostrich.ngrok-free.app';
+const baseUrl = 'http://localhost:3001';
+const mujeres = {
     onInit: () => {
-        home.getCarusel();
+        mujeres.getCarusel();
+        mujeres.getCategories();
     },
     getBaseUrl: () => {
         return baseUrl;
@@ -19,35 +21,61 @@ const home = {
         })
         .then(json => {
             console.log(json);
-            home.llenarCarusel(json);
+            mujeres.llenarCarusel(json);
         })
         .catch(error => console.log('Error: ', error));
     },
     llenarCarusel: (array) => {
         // process the JSON    
-        carousel = document.getElementById('carusel-home');
+        carousel = document.getElementById('carouselm');
         
         let carouselContent = '';
-        array.forEach(element => {
-            console.log(element.images[0]);
-            carouselContent += `
-                <article class="home-article swiper-slide">
-                <div class="home-data container">
-                    <h3 class="home-subtitle" data-swiper-parallax="500">Tengen</h3>
-                    <h1 class="home-title"data-swiper-parallax="400">"Renueva tu look, cada día".</h1>
-                
-                    <a href="#" class="home-button" data-swiper-parallax="300">
-                    Comprar ahora <i class="ri-arrow-right-s-line"></i
-                    ></a>
-                </div>
-                
-                <img src="${element.images[0]}" alt="img" class="home-img"  />
-                <div class="home-shadow"></div>
-                </article>`;
+        array.forEach((element, index) => {
+        console.log(element.images[0]);
+        carouselContent += `
+            <div class="carousel-item ${index === 0 ? 'active' : ''}">
+              <img src="${element.images[0]}" class="d-block w-100" alt="...">
+            </div>            
+            `;
         });
         carousel.innerHTML = carouselContent;
+    },
+    getCategories: (event) => {
+        fetch(`${baseUrl}/api/v1/products/?categoryId=7`,{
+            method:"GET",  
+            headers: {
+                'Content-Type': 'application/json'
+            }                                                  
+        })
+        .then(res => {                  
+            return res.json();
+        })
+        .then(json => {  
+            console.log(json);          
+            mujeres.llenarCategories(json);
+        })
+        .catch(error => console.log('Error: ', error));
+    },
+    llenarCategories: (array) => {
+        categorias = document.getElementById('categorias');
+        
+        let categoriasContent = '';
+        array.forEach(element => {
+            console.log(element.images[0]);
+            categoriasContent += `
+            <div class="product-container">
+                <div class="product-image-wrapper">
+                  <img src="${element.images[0]}" alt="product-image" class="product-image">
+                </div>
+                <div class="product-info-container">
+                  <h3>${element.title}</h3>
+                </div>
+            </div>
+            `;
+        });
+        categorias.innerHTML = categoriasContent;
     }
 }
 
-home.onInit();
+mujeres.onInit();
     
