@@ -3,8 +3,7 @@
 const baseUrl = 'http://localhost:3001';
 const home = {
     onInit: () => {
-        home.getCarusel();
-        home.getCategories();
+        home.getCarusel();        
     },
     getBaseUrl: () => {
         return baseUrl;
