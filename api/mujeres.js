@@ -5,6 +5,7 @@ const mujeres = {
     onInit: () => {
         mujeres.getCarusel();
         mujeres.getCategories();
+        mujeres.getProducts();
     },
     getBaseUrl: () => {
         return baseUrl;
@@ -74,6 +75,48 @@ const mujeres = {
             `;
         });
         categorias.innerHTML = categoriasContent;
+    },
+    getProducts: (event) => {
+        fetch(`${baseUrl}/api/v1/products/?categoryId=9`,{
+            method:"GET",
+            headers: {
+                'Content-Type': 'application/json'
+            }                                    
+        })
+        .then(res => {
+            return res.json();
+        })
+        .then(json => {
+            console.log('PRODUCTOS');
+            console.log(json);
+            mujeres.llenarProducts(json);
+        })
+        .catch(error => console.log('Error: ', error));
+    },
+    llenarProducts: (array) => {
+        productos = document.getElementById('productos');
+        
+        let productosContent = '';
+        array.forEach(element => {
+            console.log(element.images[0]);
+            productosContent += `
+            <div class="clothes-cards">
+              <div class="image-clothes">
+                <img src="${element.images[0]}" />
+              </div>
+              <div class="title-clothes">
+                <h2>${element.title}</h2>
+              </div>
+              <div class="description-clothes">
+                <p>MXN $${element.price}</p>
+                <button onclick="verProducto('${element.id}')"class="buttonVermas">
+                  Ver
+                </button>
+              </div>
+            </div>                                                                        
+            `;
+        });
+        productos.innerHTML = productosContent;
     }
 }
 
