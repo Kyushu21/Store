@@ -1,5 +1,14 @@
-const loginApi = {
 
+//const baseUrl = 'https://truly-trusted-ostrich.ngrok-free.app';
+const baseUrl = 'http://localhost:3001';
+
+const loginApi = {
+    onInit: () => {
+        
+    },
+    getBaseUrl: () => {
+        return baseUrl;
+    },
     registerUser: (event) => {
         event.preventDefault();
         //TODO validate form
@@ -43,8 +52,9 @@ const loginApi = {
             // process the JSON
             // this json is the response from the server
             // proceder a la pantalla incial
-            alert('Usuario registrado'+ json.id); 
-            window.location.href='index.html';   
+            console.log(json);  
+            alert('Usuario registrado'); 
+            window.location.href='home.html';   
         })
         .catch(error => {
             
@@ -57,7 +67,7 @@ const loginApi = {
         const email = form.get('username');
         const password = form.get('password');
 
-        fetch('https://api.escuelajs.co/api/v1/auth/login', {
+        fetch(`${baseUrl}/api/v1/auth/login`, {
             method: "POST",
             body: JSON.stringify({
                 email: email,
@@ -89,4 +99,6 @@ const loginApi = {
         });
     }
 }
+
+loginApi.onInit();
     

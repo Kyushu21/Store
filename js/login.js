@@ -85,3 +85,5 @@ class Login {
         }
     }
 }
+
+new Login();
