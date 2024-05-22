@@ -1,20 +1,27 @@
 
-const baseUrl = 'https://truly-trusted-ostrich.ngrok-free.app';
+//const baseUrl = 'https://truly-trusted-ostrich.ngrok-free.app';
+const baseUrl = 'http://localhost:3001';
 const home = {
     onInit: () => {
         home.getCarusel();
+        home.getCategories();
     },
     getBaseUrl: () => {
         return baseUrl;
     },
     getCarusel: (event) => {        
         fetch(`${baseUrl}/api/v1/products/?categoryId=5`,{
-            method:"GET",
+            method:"GET",  
             headers: {
-                'Content-Type': 'application/json'
-            }                                    
+                "ngrok-skip-browser-warning": "213212",
+                mode: 'no-cors',
+            }                                                 
         })
-        .then(res => {            
+        .then(res => {      
+            console.log(res);         
+            if (!res.ok) {
+                throw new Error('Network response was not ok');
+            }
             return res.json();
         })
         .then(json => {
@@ -46,7 +53,8 @@ const home = {
                 </article>`;
         });
         carousel.innerHTML = carouselContent;
-    }
+    },
+    
 }
 
 home.onInit();
