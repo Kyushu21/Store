@@ -112,7 +112,7 @@ const mujeres = {
               </div>
               <div class="description-clothes">
                 <p>MXN $${element.price}</p>
-                <button onclick="verProducto('${element.id}')"class="buttonVermas">
+                <button onclick="mujeres.verProducto('${element.id}')"class="buttonVermas">
                   Ver
                 </button>
               </div>
@@ -120,6 +120,9 @@ const mujeres = {
             `;
         });
         productos.innerHTML = productosContent;
+    },
+    verProducto(id) {
+        window.location.href = `productoH.html?id=${id}`;
     }
 }
 
