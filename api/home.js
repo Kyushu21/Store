@@ -1,6 +1,6 @@
 
-//const baseUrl = 'https://truly-trusted-ostrich.ngrok-free.app';
-const baseUrl = 'http://localhost:3001';
+const baseUrl = 'https://truly-trusted-ostrich.ngrok-free.app';
+//const baseUrl = 'http://localhost:3001';
 const home = {
     onInit: () => {
         home.getCarusel();        
@@ -12,8 +12,8 @@ const home = {
         fetch(`${baseUrl}/api/v1/products/?categoryId=5`,{
             method:"GET",  
             headers: {
-                "ngrok-skip-browser-warning": "213212",
-                mode: 'no-cors',
+                "ngrok-skip-browser-warning": "123456",
+                "user-agent": "PostmanRuntime/7.26.8",
             }                                                 
         })
         .then(res => {      

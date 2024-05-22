@@ -1,6 +1,6 @@
 
-//const baseUrl = 'https://truly-trusted-ostrich.ngrok-free.app';
-const baseUrl = 'http://localhost:3001';
+const baseUrl = 'https://truly-trusted-ostrich.ngrok-free.app';
+//const baseUrl = 'http://localhost:3001';
 const hombres = {
     onInit: () => {
         hombres.getCarusel();
@@ -14,8 +14,9 @@ const hombres = {
         fetch(`${baseUrl}/api/v1/products/?categoryId=3`,{
             method:"GET",
             headers: {
-                'Content-Type': 'application/json'
-            }                                    
+                "ngrok-skip-browser-warning": "123456",
+                "user-agent": "PostmanRuntime/7.26.8",
+            }                                  
         })
         .then(res => {            
             return res.json();
@@ -45,7 +46,8 @@ const hombres = {
         fetch(`${baseUrl}/api/v1/products/?categoryId=6`,{
             method:"GET",  
             headers: {
-                'Content-Type': 'application/json'
+                "ngrok-skip-browser-warning": "123456",
+                "user-agent": "PostmanRuntime/7.26.8",
             }                                                  
         })
         .then(res => {
@@ -80,7 +82,8 @@ const hombres = {
         fetch(`${baseUrl}/api/v1/products/?categoryId=8`,{
             method:"GET",
             headers: {
-                'Content-Type': 'application/json'
+                "ngrok-skip-browser-warning": "123456",
+                "user-agent": "PostmanRuntime/7.26.8",
             }                                    
         })
         .then(res => {
