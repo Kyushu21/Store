@@ -5,6 +5,7 @@ const hombres = {
     onInit: () => {
         hombres.getCarusel();
         hombres.getCategories();
+        hombres.getProducts();
     },
     getBaseUrl: () => {
         return baseUrl;
@@ -47,11 +48,7 @@ const hombres = {
                 'Content-Type': 'application/json'
             }                                                  
         })
-        .then(res => {      
-            // console.log(res);         
-            // if (!res.ok) {
-            //     throw new Error('Network response was not ok');
-            // }
+        .then(res => {
             return res.json();
         })
         .then(json => {  
@@ -78,6 +75,48 @@ const hombres = {
             `;
         });
         categorias.innerHTML = categoriasContent;
+    },
+    getProducts: (event) => {
+        fetch(`${baseUrl}/api/v1/products/?categoryId=8`,{
+            method:"GET",
+            headers: {
+                'Content-Type': 'application/json'
+            }                                    
+        })
+        .then(res => {
+            return res.json();
+        })
+        .then(json => {
+            console.log('PRODUCTOS');
+            console.log(json);
+            hombres.llenarProducts(json);
+        })
+        .catch(error => console.log('Error: ', error));
+    },
+    llenarProducts: (array) => {
+        productos = document.getElementById('productos');
+        
+        let productosContent = '';
+        array.forEach(element => {
+            console.log(element.images[0]);
+            productosContent += `
+            <div class="clothes-cards">
+              <div class="image-clothes">
+                <img src="${element.images[0]}" />
+              </div>
+              <div class="title-clothes">
+                <h2>${element.title}</h2>
+              </div>
+              <div class="description-clothes">
+                <p>MXN $${element.price}</p>
+                <button onclick="verProducto('${element.id}')"class="buttonVermas">
+                  Ver
+                </button>
+              </div>
+            </div>                                                                        
+            `;
+        });
+        productos.innerHTML = productosContent;
     }
 }
 
