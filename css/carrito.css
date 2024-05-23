@@ -178,8 +178,8 @@
   border-radius: 5px;
 }
 
-.btn-eliminar {
-  background-color: var(--color2);
+.eliminar-producto {
+  background-color: rgb(145, 8, 8);
   color: var(--color1);
   border: none;
   cursor: pointer;
@@ -190,7 +190,7 @@
   transition: background-color 0.3s;
 }
 
-.btn-eliminar:hover {
-  background-color: var(--color1);
+.eliminar-producto:hover {
+  background-color: red;
   color: var(--color2);
 }

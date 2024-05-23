@@ -26,24 +26,36 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // Función para actualizar el contenido del carrito en el modal
   function actualizarCarrito() {
-      carritoProductosModal.innerHTML = '';
-      carrito.forEach(producto => {
-          const productoElemento = document.createElement('div');
-          productoElemento.classList.add('modal__item');
-          productoElemento.innerHTML = `
-              <div class="modal__image-product">
-                  <img src="${producto.image}.jpg" alt="${producto.title}">
-              </div>
-              <div class="modal__text-product">
-                  <p>${producto.title}</p>
-                  <p><strong>MXN $${producto.price}</strong></p>
-              </div>
-          `;
-          carritoProductosModal.appendChild(productoElemento);
-      });
-      calcularTotalCarrito();
-      checkIfCartIsEmpty();
-  }
+    carritoProductosModal.innerHTML = '';
+    carrito.forEach((producto, index) => { // Agregar index para identificar el producto en el carrito
+        const productoElemento = document.createElement('div');
+        productoElemento.classList.add('modal__item');
+        productoElemento.innerHTML = `
+            <div class="modal__image-product">
+                <img src="${producto.image}.jpg" alt="${producto.title}">
+            </div>
+            <div class="modal__text-product">
+                <p>${producto.title}</p>
+                <p><strong>MXN $${producto.price}</strong></p>
+            </div>
+            <button class="eliminar-producto" data-index="${index}">x</button> <!-- Botón para eliminar -->
+        `;
+        carritoProductosModal.appendChild(productoElemento);
+    });
+    calcularTotalCarrito();
+    checkIfCartIsEmpty();
+
+    // Agregar event listener para eliminar producto al hacer clic en el botón
+    const botonesEliminar = document.querySelectorAll('.eliminar-producto');
+    botonesEliminar.forEach(boton => {
+        boton.addEventListener('click', function() {
+            const index = parseInt(this.getAttribute('data-index')); // Obtener el índice del producto
+            carrito.splice(index, 1); // Eliminar el producto del carrito
+            actualizarCarrito(); // Actualizar el carrito en el modal
+        });
+    });
+}
+
 
   // Event listener para cerrar el modal
   closeModalButton.addEventListener('click', () => {
