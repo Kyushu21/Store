@@ -23,6 +23,16 @@ document.addEventListener("DOMContentLoaded", function () {
       modalCarrito.classList.add("active");
     }
   });
+  // Event listener para cerrar el modal
+  closeModalButton.addEventListener("click", () => {
+    modalCarrito.classList.remove("active");
+
+    // Limpia el contenido del carrito modal al cerrarlo
+    carritoProductosModal.innerHTML = "";
+
+    // Verifica si el carrito está vacío
+    checkIfCartIsEmpty();
+  });
   // Verifica si el carrito está vacío al cargar la página
   checkIfCartIsEmpty();
 });
