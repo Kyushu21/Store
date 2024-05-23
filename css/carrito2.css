@@ -5,12 +5,13 @@
     --fondo: #f5f7f9;
     --border: #c9c6c6;
   }
+  
   .product-grid {
     display: grid;
     gap: 1.5rem;
   }
   
-  .product-grid__item {
+  .custom-product-grid__item {
     background: #fff;
     border-radius: 3px;
     overflow: hidden;
@@ -18,7 +19,7 @@
     padding: 15px;
   }
   
-  .btn {
+  .custom-btn {
     width: 100%;
     height: 48px;
     line-height: 48px;
@@ -31,17 +32,17 @@
     border: 2px solid transparent;
   }
   
-  .btn-default {
+  .custom-btn-default {
     background-color: var(--color2);
     color: var(--color1);
   }
   
-  .btn-default:hover {
+  .custom-btn-default:hover {
     background-color: var(--color1);
     color: #fff;
   }
   
-  .modall {
+  .custom-modal {
     position: fixed;
     top: 0;
     right: 0;
@@ -56,19 +57,19 @@
     z-index: 100;
   }
   
-  .modal.active {
+  .custom-modal.active {
     visibility: visible;
     opacity: 1;
     transform: none;
   }
   
-  .modal__container {
+  .custom-modal__container {
     height: 100%;
     padding: 30px;
     position: relative;
   }
   
-  .modal__close {
+  .custom-modal__close {
     position: absolute;
     left: -50px;
     top: 20px;
@@ -82,40 +83,39 @@
     cursor: pointer;
   }
   
-  .modal__header h2 {
+  .custom-modal__header h2 {
     font-size: 24px;
     color: var(--color1);
     font-weight: 600;
   }
   
-  .modal__body {
+  .custom-modal__body {
     overflow-y: auto;
   }
   
-  .modal__item {
+  .custom-modal__item {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
   }
   
-  .modal__thumb {
+  .custom-modal__thumb {
     width: 80px;
   }
   
-  .modal__text-product {
+  .custom-modal__text-product {
     padding-left: 20px;
   }
-  .empty-cart-message {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      text-align: center;
-      color: var(--color3);
-      font-size: 18px;
-    }
-    .empty-cart-message {
-      display: none;
+  
+  .custom-empty-cart-message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: var(--color3);
+    font-size: 18px;
+    display: none;
   }
   
   @media (min-width: 600px) {
@@ -123,3 +123,4 @@
       grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     }
   }
+  
