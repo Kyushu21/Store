@@ -1,0 +1,283 @@
+:root {
+  --primary-color: #333333;
+  --secondary-color: #333333;
+  --bg-color: #fcfdfd;
+  --button-color: #333333;
+  --h1-color: #990100;
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+  transition: all 0.3s ease-in-out;
+}
+
+.main {
+    margin-top: 10px; /* Ajusta este valor según sea necesario */
+  }
+  
+  
+  /* ***** HEADER ***** */
+  header {
+    color: #000;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: #000;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #fff; 
+    z-index: 10;
+  }
+  
+   .logo img {
+    filter: grayscale(100%); 
+    transition: filter 0.3s; 
+  }
+  .logo img:hover {
+    filter: grayscale(0%);
+  } 
+  
+  
+  /* ************ */
+  /* ***** NAVBAR ***** */
+  /* ************ */
+  
+  .logo {
+    flex: 1;
+    text-align: center; 
+  }
+  
+  .logo img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .menu-principal {
+    order: -1; 
+  }
+  
+  .menu-principal ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  
+  .menu-principal li {
+    margin-right: 20px;
+  }
+  
+  .menu-principal a {
+    text-decoration: none;
+    color: #000;
+    transition: color 0.3s ease;
+  }
+  
+  .menu-principal a:hover {
+    color: red;
+  }
+  
+  .acciones-usuario {
+    display: flex;
+    align-items: center;
+  }
+  
+  .acciones-usuario a {
+    margin-left: 20px;
+    text-decoration: none;
+    color:#000;
+   
+    transition: color 0.3s ease;
+  }
+  
+  .acciones-usuario a:hover {
+    color: red;
+  }
+  
+  .acciones-usuario a {
+    font-size: 20px; 
+  }
+  
+  
+  .acciones-usuario i {
+    font-size: 20px; 
+  }
+  
+  /* ************ */
+  /* ***** SERCH-BAR ***** */
+  /* ************ */
+  
+   .search-bar {
+    position: relative;
+    width: 250px; 
+  }
+  
+  .search-bar input {
+    padding: 13px; 
+    border: 1px solid #000; 
+    border-radius: 20px; 
+    outline: none; 
+  }
+  
+  .search-bar button {
+    padding: 10px; 
+    background-color: #fff; 
+    color: #000; 
+    border: 1px solid #000; 
+    border-radius: 20px; 
+    cursor: pointer;
+  }
+  
+  .search-bar button:hover {
+    background-color: red; 
+    border-color: #000; 
+  } 
+
+  /*CONTACTANOS*/
+.contact-container {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  background: var(--bg-color);
+}
+
+.left-col {
+  width: 45vw;
+  height: 100%;
+  margin-top: 5rem;
+  background-image: url("../images/c1.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+
+.right-col {
+  background: var(--bg-color);
+  width: 50vw;
+  height: 100vh;
+  padding: 7rem 3.5rem;
+}
+
+h1,
+label,
+.boton-enviar button,
+.description {
+  font-family: "Jost", sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.1rem;
+}
+
+h1 {
+  color: var(--h1-color);
+  text-transform: uppercase;
+  font-size: 2.5rem;
+  letter-spacing: 0.5rem;
+  font-weight: 300;
+}
+
+p {
+  color: var(--secondary-color);
+  font-size: 0.9rem;
+  letter-spacing: 0.01rem;
+  width: 40vw;
+  margin: 0.25rem 0;
+}
+
+label,
+.description {
+  color: var(--secondary-color);
+  text-transform: uppercase;
+  font-size: 0.625rem;
+}
+
+form {
+  width: 31.25rem;
+  position: relative;
+  margin-top: 2rem;
+  padding: 1rem 0;
+}
+
+.input-contactanos input,
+textarea,
+label {
+  width: 40vw;
+  display: block;
+}
+
+p,
+placeholder,
+input,
+textarea {
+  font-family: "Helvetica Neue", sans-serif;
+}
+
+.input-contactanos input::placeholder,
+textarea::placeholder {
+  color: var(--primary-color);
+}
+
+.input-contactanos input,
+textarea {
+  color: var(--primary-color);
+  font-weight: 500;
+  background: var(--bg-color);
+  border: none;
+  border-bottom: 1px solid var(--secondary-color);
+  padding: 0.5rem 0;
+  margin-bottom: 1rem;
+  outline: none;
+}
+
+textarea {
+  resize: none;
+}
+
+.boton-enviar button {
+  text-transform: uppercase;
+  font-weight: 300;
+  background: var(--button-color);
+  color: var(--bg-color);
+  width: 10rem;
+  height: 2.25rem;
+  border: none;
+  border-radius: 2px;
+  outline: none;
+  cursor: pointer;
+}
+
+.input-contactanos input:hover,
+textarea:hover,
+.boton-enviar button:hover {
+  opacity: 0.5;
+}
+
+.boton-enviar button:active {
+  opacity: 0.8;
+}
+
+@media only screen and (max-width: 950px) {
+  .logo {
+    width: 8rem;
+  }
+  h1 {
+    font-size: 1.75rem;
+  }
+  p {
+    font-size: 0.7rem;
+  }
+  input,
+  textarea,
+  button {
+    font-size: 0.65rem;
+  }
+  .description {
+    font-size: 0.3rem;
+    margin-left: 0.4rem;
+  }
+  button {
+    width: 7rem;
+  }
+}
