@@ -7,8 +7,8 @@
 }
 
 .modal__body {
-  overflow-y: auto;  
-  max-height: 100%; 
+  overflow-y: auto;
+  max-height: 100%;
 }
 
 .modal {
@@ -193,4 +193,31 @@
 .eliminar-producto:hover {
   background-color: red;
   color: var(--color2);
+}
+
+.currency-selector {
+  position: relative;
+  display: inline-block;
+}
+
+.currency-selector select {
+  padding: 5px;
+  border-radius: 5px;
+  background-image: url("../flags/us-flag.png");
+  background-repeat: no-repeat;
+  background-size: 20px;
+  background-position: 95% center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 100px;
+}
+
+.currency-selector img {
+  position: absolute;
+  top: 50%;
+  right: 5px;
+  transform: translateY(-50%);
+  width: 20px;
+  height: auto;
 }

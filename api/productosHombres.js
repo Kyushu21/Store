@@ -212,3 +212,101 @@ document.addEventListener("DOMContentLoaded", function() {
 
   productosHombres.onInit();
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const currencySelector = document.getElementById("currency-selector");
+  const flagImg = document.getElementById("flag-img");
+  const pricesInMXN = []; // Almacena los precios originales en MXN
+
+  // Guarda los precios originales en MXN
+  document.querySelectorAll(".products-price").forEach((price) => {
+    pricesInMXN.push(parseFloat(price.textContent.replace(/[^\d.]/g, "")));
+  });
+
+  // Factor de conversión para otras monedas
+  const conversionRates = {
+    MXN: 1,
+    USD: 20,
+    EUR: 24,
+  };
+
+  function updateFlagAndPrices() {
+    const selectedFlag =
+      currencySelector.options[currencySelector.selectedIndex].getAttribute(
+        "data-flag"
+      );
+    flagImg.src = `../css/flag/${selectedFlag}.png`;
+
+    const selectedCurrency = currencySelector.value;
+    const conversionRate = conversionRates[selectedCurrency];
+    const prices = document.querySelectorAll(".products-price");
+
+    if (selectedCurrency === "MXN") {
+      // Si la moneda seleccionada es MXN, restaura los precios originales en MXN
+      prices.forEach((price, index) => {
+        price.textContent = `MXN ${pricesInMXN[index].toFixed(2)}`;
+      });
+    } else {
+      // Si la moneda seleccionada es diferente de MXN, convierte los precios a esa moneda
+      prices.forEach((price, index) => {
+        const priceInMXN = pricesInMXN[index]; // Obtiene el precio original en MXN
+        const convertedPrice = priceInMXN / conversionRate; // Calcula el precio convertido
+        price.textContent = `${selectedCurrency} ${convertedPrice.toFixed(2)}`; // Actualiza el precio en el HTML
+      });
+    }
+  }
+
+  // Evento para cargar la imagen de la bandera y actualizar los precios cuando se carga la página
+  window.addEventListener("load", updateFlagAndPrices);
+
+  // Evento para cambiar la imagen de la bandera y actualizar los precios cuando se selecciona una nueva moneda
+  currencySelector.addEventListener("change", updateFlagAndPrices);
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    const currencySelector = document.getElementById("currency-selector");
+    const flagImg = document.getElementById("flag-img");
+    const pricesInMXN = []; // Almacena los precios originales en MXN
+    let currentCurrency = "MXN"; // Almacena la moneda actual seleccionada
+  
+    // Guarda los precios originales en MXN
+    document.querySelectorAll(".products-price").forEach((price) => {
+      pricesInMXN.push(parseFloat(price.textContent.replace(/[^\d.]/g, "")));
+    });
+  
+    // Factor de conversión para otras monedas
+    const conversionRates = {
+      MXN: 1,
+      USD: 0.060,
+      EUR: 0.055,
+    };
+  
+    function updateCartTotal() {
+        const selectedCurrency = currencySelector.value;
+        const conversionRate = conversionRates[selectedCurrency];
+        const totalAmountElement = document.getElementById("carrito-total-amount");
+        let currentTotalAmount = parseFloat(totalAmountElement.textContent.replace(/[^\d.]/g, ""));
+        
+        // Si la moneda seleccionada es diferente de la moneda actual, convierte el total
+        if (selectedCurrency !== currentCurrency) {
+          // Primero, convertimos el total actual a la moneda base (MXN)
+          currentTotalAmount /= conversionRates[currentCurrency];
+          // Luego, aplicamos el factor de conversión a la nueva moneda
+          currentTotalAmount *= conversionRate;
+          currentCurrency = selectedCurrency; // Actualiza la moneda actual seleccionada
+        } else {
+          // Si no hay cambio de moneda, simplemente mostramos el total actual
+          currentTotalAmount /= conversionRates[currentCurrency];
+        }
+        
+        totalAmountElement.textContent = `${selectedCurrency} ${currentTotalAmount.toFixed(2)}`;
+      }
+      
+  
+    // Evento para actualizar el total del carrito cuando se carga la página
+    window.addEventListener("load", updateCartTotal);
+  
+    // Evento para actualizar el total del carrito cuando se cambia la moneda en el modal
+    currencySelector.addEventListener("change", updateCartTotal);
+  });
+  

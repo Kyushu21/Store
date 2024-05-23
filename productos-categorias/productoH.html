@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Detalle del Producto</title>
     <link rel="stylesheet" href="../css/productoscarrito.css" />
 </head>
+
 <body>
     <header>
         <div class="logo">
@@ -34,6 +36,15 @@
             <button class="modal__close jsModalClose">×</button>
             <div class="modal__header">
                 <h2><i class="fas fa-cart-shopping"></i> Carrito</h2>
+                <div class="currency-selector">
+                    <select id="currency-selector">
+                        <option value="MXN" data-flag="MXN">MXN</option>
+                        <option value="USD" data-flag="us">USD</option>
+                        <option value="EUR" data-flag="eu">EUR</option>
+
+                    </select>
+                    <img id="flag-img" src="" alt="Flag" />
+                </div>
             </div>
             <div class="modal__body">
                 <div id="carrito-productos-modal">
@@ -79,4 +90,5 @@
     <script src="https://kit.fontawesome.com/81581fb069.js" crossorigin="anonymous"></script>
     <script src="../api/productosHombres.js"></script>
 </body>
+
 </html>
