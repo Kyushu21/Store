@@ -1,225 +1,235 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    
-    <link rel="shortcut icon" href="assets/img/favicon.png"type="image/x-icon" />
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css"/>
-    <link rel="stylesheet" href="css/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="css/estilos-inicial2.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-  </head>
-  <body>
-    <!-- Header -->
-    <header>
-      <div class="logo">
-        <img src="images/icono.png" alt="Logotipo de la tienda" height="100px" width="100px" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+
+  <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css" />
+  <link rel="stylesheet" href="css/estilos-inicial2.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+</head>
+
+<body>
+  <!-- Header -->
+  <header>
+    <div class="logo">
+      <img src="images/icono.png" alt="Logotipo de la tienda" height="100px" width="100px" />
+    </div>
+    <nav class="menu-principal">
+      <ul>
+        <li><a href="home.html">Inicio</a></li>
+        <li><a href="productos-categorias/hombre.html">Hombres</a></li>
+        <li><a href="productos-categorias/mujer.html">Mujeres</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+    <div class="acciones-usuario">
+      <div class="search-bar">
+        <input type="text" placeholder="Buscar" />
+        <button type="submit"><i class="fa-solid fa-search"></i></button>
       </div>
-      <nav class="menu-principal">
-        <ul>
-          <li><a href="/productos-categorias/hombre.html">Hombres</a></li>
-          <li><a href="/productos-categorias/mujer.html">Mujeres</a></li>
-          <li><a href="/home.html">Inicio</a></li>
-          <li><a href="#contacto">Contacto</a></li>
-        </ul>
-      </nav>
-      <div class="acciones-usuario">
-        <div class="search-bar">
-          <input type="text" placeholder="Buscar" />
-          <button type="submit"><i class="fa-solid fa-search"></i></button>
+      <a href="login.html"><i class="fa-solid fa-user"></i></a>
+      <a href="#Carrito"><i class="fa-solid fa-cart-shopping"></i></a>
+    </div>
+  </header>
+<!-- Modal -->
+<div class="modal" id="jsModalCarrito">
+  <div class="modal__container">
+      <button class="modal__close jsModalClose">×</button>
+      <div class="modal__header">
+          <h2><i class="fas fa-cart-shopping"></i> Carrito</h2>
+      </div>
+      <div class="modal__body">
+          <div id="carrito-productos-modal">
+              <p id="empty-cart-message" class="empty-cart-message">El carrito está vacío.
+                <i class="fa-regular fa-face-frown-open"></i>
+              </p>
+          </div>
+      </div>
+  </div>
+</div>
+
+  <!-----------HOME------------------->
+  <main class="main">
+    <section class="home">
+      <div class="home-swiper swiper">
+        <div id="carusel-home" class="swiper-wrapper">
+          <!-- aqui se llena el carousel de fomma automatica -->
         </div>
-        <a href="../registrologin.html"><i class="fa-solid fa-user"></i></a>
-        <a href="#Carrito"><i class="fa-solid fa-cart-shopping"></i></a>
       </div>
-    </header>
-        <!-----------HOME------------------->
-        <main class="main">
-          <section class="home">
-            <div class="home-swiper swiper">
-              <div id="carusel-home" class="swiper-wrapper">
-                <!-- aqui se llena el carousel de fomma automatica -->
-              </div>
-            </div>          
-                <div class="home-content">
-                    <div class="swiper-pagination"></div>
-                
-                    <div class="swiper-navigation">
-                        <div class="swiper-button-prev">
-                            <i class="ri-arrow-left-s-line"></i>
-                        </div>
-                        <div class="swiper-button-next">
-                            <i class="ri-arrow-right-s-line"></i>
-                        </div>
-                    </div>
-                </div>
-          </section>
-        </main>
-      
-        <!----------------------NUEVO------------------------------->
-        <main class="new-collection">
-        <section class="new section" id="new">
-            <h2 class="section-title">LO MAS NUEVO</h2>
-            <div class="new-container">
-                <article class="new-card">
-                    <img src="https://i.postimg.cc/V5Q2fg20/p8.jpg" alt="img" class="new-img">
-                
-                    <div class="new-data">
-                        <h2 class="new-title">
-                            Conjuntos
-                        </h2>
-                        <a href="#" class="button-link">
-                          Coleccion de verano <i class="ri-arrow-right-line"></i>
-                      </a>
-                    </div>
-                  
-                </article>
-              
-                <article class="new-card">
-                    <img src="https://i.postimg.cc/pLxXkJyd/p10.jpg" alt="img" class="new-img">
-                
-                    <div class="new-data">
-                        <h2 class="new-title">
-                            Pantalones
-                        </h2>
-                        <a href="#" class="button-link">
-                          Coleccion de verano <i class="ri-arrow-right-line"></i>
-                      </a>
-                    </div>
+      <div class="home-content">
+        <div class="swiper-pagination"></div>
 
-                    </a>
-                </article>
-              
-                <article class="new-card">
-                    <img src="https://i.postimg.cc/zvR9Y621/p7.jpg" alt="img" class="new-img">
-                
-
-                    <div class="new-data">
-                        <h2 class="new-title">
-                            Camisetas
-                        </h2>
-                        <a href="#" class="button-link">
-                          Coleccion de verano <i class="ri-arrow-right-line"></i>
-                      </a>
-                    </div>
-
-                    </a>
-                </article>
-            </div>
-        </section>
-      
-        <!--------------------Collection---------------------->
-        <section class="collection section" id="collection">
-            <div class="collection-container">
-                <div class="collection-explore">
-                    <div class="collection-data-men">
-                        <h2 class="collection-title">
-                            Coleccion <br> de hombre
-                        </h2>
-                        <a href="#" class="button-link">
-                            Explorar las prendas <i class="ri-arrow-right-line"></i>
-                        </a>
-                    </div>
-                  
-                    <img src="https://i.postimg.cc/DfXvTMXZ/hombre-collection.jpg" alt="collection img">
-                </div>
-              
-                <div class="collection-explore">
-                    <img src="https://i.postimg.cc/mD0T9Q0B/mujer-collection.jpg" alt="collection img">
-                    <div class="collection-data-woman">
-                        <h2 class="collection-title">
-                            Coleccion <br> de mujer
-                        </h2>
-                        <a href="#" class="button-link">
-                          Explorar las prendas <i class="ri-arrow-right-line"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-      
-        <!-----------------------PRODUCTOS--------------------->
-        <section class="products-section" id="products">
-          <h2 class="section-title">PODRIA INTERESARTE</h2>
-        
-          <div class="products-container">
-              <article class="products-cards ">
-                <img src="https://i.postimg.cc/rpwy2y1X/p1.jpg" alt="product-img" class="products-img">
-              
-                <h2 class="products-title">
-                  Conjunto beige
-                </h2>
-                <span class="products-price">$380</span>
-              </article>
-            
-              <article class="products-cards">
-                <img src="https://i.postimg.cc/MZCGfSSV/p3.jpg" alt="product-img" class="products-img">
-              
-                <h2 class="products-title">
-                  conjunto amarillo
-                </h2>
-                <span class="products-price">$480</span>
-              </article>
-            
-              <article class="products-cards ">
-                <img src="https://i.postimg.cc/rF5wSPVb/p5.jpg" alt="product-img" class="products-img">
-              
-                <h2 class="products-title">
-                  conjunto blanco
-                </h2>
-                <span class="products-price">$580</span>
-              </article>
-            </div>
-        </section>
-    </main>
-
-     <!--------------FOOTER------------------------------>
-     <footer>
-      <div id="contacto">
-        <h3>Información de Contacto</h3>
-        <p>Dirección: Calle UES, Ciudad UES</p>
-        <p>Teléfono: +123456789</p>
-        <p>Correo electrónico: TENGEN@hotmail.com</p>
+        <div class="swiper-navigation">
+          <div class="swiper-button-prev">
+            <i class="ri-arrow-left-s-line"></i>
+          </div>
+          <div class="swiper-button-next">
+            <i class="ri-arrow-right-s-line"></i>
+          </div>
+        </div>
       </div>
-      <div id="politicas">
-        <h3>Políticas de la Tienda</h3>
-        <ul>
-          <li><a href="#terminos">Términos y Condiciones</a></li>
-          <li><a href="#privacidad">Política de Privacidad</a></li>
-        </ul>
-      </div>
-      <div id="redes-sociales">
-        <h3>Redes Sociales</h3>
-        <ul>
-          <li>
-            <a href="https://facebook.com"
-              ><i class="fab fa-facebook"></i> Facebook</a
-            >
-          </li>
-          <li>
-            <a href="https://twitter.com"
-              ><i class="fab fa-twitter"></i> Twitter</a
-            >
-          </li>
-          <li>
-            <a href="https://instagram.com"
-              ><i class="fab fa-instagram"></i> Instagram</a
-            >
-          </li>
-          <li>
-            <a href="https://linkedin.com"
-              ><i class="fab fa-linkedin"></i> LinkedIn</a
-            >
-          </li>
-        </ul>
-      </div>
-    </footer>
+    </section>
+  </main>
 
-    <!------------------JS-------------------------------->
-    <script src="js/swiper-bundle.min.js"></script>
-    <script src="js/inicial2.js"></script>  
-    <script src="/api/home.js"></script>  
-  </body>
+  <!----------------------NUEVO------------------------------->
+  <main class="new-collection">
+    <section class="new section" id="new">
+      <h2 class="section-title">LO MAS NUEVO</h2>
+      <div class="new-container">
+        <article class="new-card">
+          <img src="https://i.postimg.cc/V5Q2fg20/p8.jpg" alt="img" class="new-img">
+
+          <div class="new-data">
+            <h2 class="new-title">
+              Conjuntos
+            </h2>
+            <a href="#" class="button-link">
+              Coleccion de verano <i class="ri-arrow-right-line"></i>
+            </a>
+          </div>
+
+        </article>
+
+        <article class="new-card">
+          <img src="https://i.postimg.cc/pLxXkJyd/p10.jpg" alt="img" class="new-img">
+
+          <div class="new-data">
+            <h2 class="new-title">
+              Pantalones
+            </h2>
+            <a href="#" class="button-link">
+              Coleccion de verano <i class="ri-arrow-right-line"></i>
+            </a>
+          </div>
+
+          </a>
+        </article>
+
+        <article class="new-card">
+          <img src="https://i.postimg.cc/zvR9Y621/p7.jpg" alt="img" class="new-img">
+
+
+          <div class="new-data">
+            <h2 class="new-title">
+              Camisetas
+            </h2>
+            <a href="#" class="button-link">
+              Coleccion de verano <i class="ri-arrow-right-line"></i>
+            </a>
+          </div>
+
+          </a>
+        </article>
+      </div>
+    </section>
+
+    <!--------------------Collection---------------------->
+    <section class="collection section" id="collection">
+      <div class="collection-container">
+        <div class="collection-explore">
+          <div class="collection-data-men">
+            <h2 class="collection-title">
+              Coleccion <br> de hombre
+            </h2>
+            <a href="#" class="button-link">
+              Explorar las prendas <i class="ri-arrow-right-line"></i>
+            </a>
+          </div>
+
+          <img src="https://i.postimg.cc/DfXvTMXZ/hombre-collection.jpg" alt="collection img">
+        </div>
+
+        <div class="collection-explore">
+          <img src="https://i.postimg.cc/mD0T9Q0B/mujer-collection.jpg" alt="collection img">
+          <div class="collection-data-woman">
+            <h2 class="collection-title">
+              Coleccion <br> de mujer
+            </h2>
+            <a href="#" class="button-link">
+              Explorar las prendas <i class="ri-arrow-right-line"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-----------------------PRODUCTOS--------------------->
+    <section class="products-section" id="products">
+      <h2 class="section-title">PODRIA INTERESARTE</h2>
+
+      <div class="products-container">
+        <article class="products-cards ">
+          <img src="https://i.postimg.cc/rpwy2y1X/p1.jpg" alt="product-img" class="products-img">
+
+          <h2 class="products-title">
+            Conjunto beige
+          </h2>
+          <span class="products-price">$380</span>
+        </article>
+
+        <article class="products-cards">
+          <img src="https://i.postimg.cc/MZCGfSSV/p3.jpg" alt="product-img" class="products-img">
+
+          <h2 class="products-title">
+            conjunto amarillo
+          </h2>
+          <span class="products-price">$480</span>
+        </article>
+
+        <article class="products-cards ">
+          <img src="https://i.postimg.cc/rF5wSPVb/p5.jpg" alt="product-img" class="products-img">
+
+          <h2 class="products-title">
+            conjunto blanco
+          </h2>
+          <span class="products-price">$580</span>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!--------------FOOTER------------------------------>
+  <footer>
+    <div id="contacto">
+      <h3>Información de Contacto</h3>
+      <p>Dirección: Calle UES, Ciudad UES</p>
+      <p>Teléfono: +123456789</p>
+      <p>Correo electrónico: TENGEN@hotmail.com</p>
+    </div>
+    <div id="politicas">
+      <h3>Políticas de la Tienda</h3>
+      <ul>
+        <li><a href="#terminos">Términos y Condiciones</a></li>
+        <li><a href="#privacidad">Política de Privacidad</a></li>
+      </ul>
+    </div>
+    <div id="redes-sociales">
+      <h3>Redes Sociales</h3>
+      <ul>
+        <li>
+          <a href="https://facebook.com"><i class="fab fa-facebook"></i> Facebook</a>
+        </li>
+        <li>
+          <a href="https://twitter.com"><i class="fab fa-twitter"></i> Twitter</a>
+        </li>
+        <li>
+          <a href="https://instagram.com"><i class="fab fa-instagram"></i> Instagram</a>
+        </li>
+        <li>
+          <a href="https://linkedin.com"><i class="fab fa-linkedin"></i> LinkedIn</a>
+        </li>
+      </ul>
+    </div>
+  </footer>
+
+  <!------------------JS-------------------------------->
+  <script src="js/swiper-bundle.min.js"></script>
+  <script src="js/inicial2.js"></script>
+  <script src="api/home.js"></script>
+  <script src="api/carrito.js"></script>
+</body>
 </html>

@@ -18,9 +18,9 @@
       </div>
       <nav class="menu-principal">
         <ul>
+          <li><a href="../home.html">Inicio</a></li>
           <li><a href="hombre.html">Hombres</a></li>
           <li><a href="mujer.html">Mujeres</a></li>
-          <li><a href="../home.html">Inicio</a></li>
           <li><a href="#contacto">Contacto</a></li>
         </ul>
       </nav>
@@ -29,11 +29,27 @@
           <input type="text" placeholder="Buscar" />
           <button type="submit"><i class="fa-solid fa-search"></i></button>
         </div>
-        <a href="../registrologin.html"><i class="fa-solid fa-user"></i></a>
+        <a href="../login.html"><i class="fa-solid fa-user"></i></a>
         <a href="#Carrito"><i class="fa-solid fa-cart-shopping"></i></a>
       </div>
     </header>
     <h1></h1>
+    <!-- Modal -->
+<div class="modal" id="jsModalCarrito">
+  <div class="modal__container">
+      <button class="modal__close jsModalClose">×</button>
+      <div class="modal__header">
+          <h2><i class="fas fa-cart-shopping"></i> Carrito</h2>
+      </div>
+      <div class="modal__body">
+          <div id="carrito-productos-modal">
+              <p id="empty-cart-message" class="empty-cart-message">El carrito está vacío.
+                <i class="fa-regular fa-face-frown-open"></i>
+              </p>
+          </div>
+      </div>
+  </div>
+</div>
     <div id="detalleProducto">
       <!-- Aqui se mostrara el detalle del producto seleccionado -->
     </div>
@@ -77,9 +93,11 @@
         </ul>
       </div>
     </footer>
+    <script src="../api/carrito.js"></script>
     <script src="https://kit.fontawesome.com/81581fb069.js" crossorigin="anonymous"></script>
     <!-- <script src="../js/productoH.js"></script> -->
     <script src="../api/productosHombres.js"></script>
     <!-- <script src="../js/script-productos.js"></script> -->
+
   </body>
 </html>

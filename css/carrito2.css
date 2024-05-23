@@ -1,0 +1,125 @@
+:root {
+    --color1: #135337;
+    --color2: #9ccb9e;
+    --color3: #30303f;
+    --fondo: #f5f7f9;
+    --border: #c9c6c6;
+  }
+  .product-grid {
+    display: grid;
+    gap: 1.5rem;
+  }
+  
+  .product-grid__item {
+    background: #fff;
+    border-radius: 3px;
+    overflow: hidden;
+    text-align: center;
+    padding: 15px;
+  }
+  
+  .btn {
+    width: 100%;
+    height: 48px;
+    line-height: 48px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+    text-transform: uppercase;
+    border: 2px solid transparent;
+  }
+  
+  .btn-default {
+    background-color: var(--color2);
+    color: var(--color1);
+  }
+  
+  .btn-default:hover {
+    background-color: var(--color1);
+    color: #fff;
+  }
+  
+  .modall {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    max-width: 350px;
+    height: 100vh;
+    background: #fff;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateX(100%);
+    transition: all 0.35s ease-in;
+    z-index: 100;
+  }
+  
+  .modal.active {
+    visibility: visible;
+    opacity: 1;
+    transform: none;
+  }
+  
+  .modal__container {
+    height: 100%;
+    padding: 30px;
+    position: relative;
+  }
+  
+  .modal__close {
+    position: absolute;
+    left: -50px;
+    top: 20px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--color2);
+    color: var(--color1);
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+  }
+  
+  .modal__header h2 {
+    font-size: 24px;
+    color: var(--color1);
+    font-weight: 600;
+  }
+  
+  .modal__body {
+    overflow-y: auto;
+  }
+  
+  .modal__item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .modal__thumb {
+    width: 80px;
+  }
+  
+  .modal__text-product {
+    padding-left: 20px;
+  }
+  .empty-cart-message {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: var(--color3);
+      font-size: 18px;
+    }
+    .empty-cart-message {
+      display: none;
+  }
+  
+  @media (min-width: 600px) {
+    .product-grid {
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+  }

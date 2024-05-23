@@ -1,4 +1,5 @@
 
+
 const baseUrl = 'https://truly-trusted-ostrich.ngrok-free.app';
 //const baseUrl = 'http://localhost:3001';
 const home = {
@@ -57,4 +58,3 @@ const home = {
 }
 
 home.onInit();
-    

@@ -19,7 +19,7 @@ const loginApi = {
         const password = form.get('password');
         
         // Add user to database
-        fetch(`${baseUrl}/users`,{
+        fetch(`${baseUrl}/api/v1/users`,{
             method:"POST",
             headers: {
                 "ngrok-skip-browser-warning": "123456",
@@ -64,7 +64,7 @@ const loginApi = {
     loginUser: (event) => {
         event.preventDefault();
         const form = new FormData(event.target);
-        const email = form.get('username');
+        const email = form.get('email');
         const password = form.get('password');
 
         fetch(`${baseUrl}/api/v1/auth/login`, {
@@ -79,12 +79,7 @@ const loginApi = {
             }
         })
         .then(res => {
-            if (res.ok) {
                 return res.json();
-            } else {
-                //TODO: add alert to show error
-                throw new Error('Login failed');
-            }
         })
         .then(json => {        
             console.log('refresh token ', json.access_token);
