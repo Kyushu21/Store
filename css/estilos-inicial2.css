@@ -138,7 +138,7 @@ header {
 .search-bar button:hover {
   background-color: red; 
   border-color: #000; 
-} */
+} 
 /*HOME*/
 
 .home-swiper {
@@ -270,7 +270,6 @@ header {
   animation-range: entry 50% cover 50%;
   animation: fade 3s ease linear both;
 }
-
 .new-card {
   display: flex;
   flex-direction: column;
@@ -279,24 +278,14 @@ header {
   margin: 0;
   padding: 0;
 }
-
 .new-img {
   width: 270px;
   margin-bottom: 1rem;
 }
-
-.new-link {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  color: var(--color-gris);
-  padding-right: 0.75rem;
-}
-
 .new-title {
   font-size: 1.25rem;
   margin-bottom: 0.5rem;
-  text-align: center; /* Centrar el texto */
+  text-align: center; 
   animation: fade linear both;
   animation-timeline: view();
   animation-range: entry 50% cover 50%;
@@ -335,6 +324,7 @@ header {
   grid-template-columns: 230px max-content;
   bottom: 1rem;
   margin-right: 5rem;
+  margin-bottom: 23px;
 }
 .collection-explore:nth-child(1) {
   grid-template-columns: max-content 230px;
@@ -351,6 +341,48 @@ header {
 }
 .button-link {
   color: #333333;
+  display: inline-flex;
+  align-items: center;
+  transition: color 0.3s ease;
+  text-decoration: none; 
+  position: relative;
+}
+.button-link i {
+  margin-left: 0.5rem;
+  transition: transform 0.3s ease;
+}
+.button-link::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: #555555;
+  transition: width 0.3s ease;
+}
+.button-link:hover {
+  color: #555555;
+}
+.button-link:hover i {
+  transform: translateX(5px);
+}
+.button-link:hover::after {
+  width: 100%;
+}
+.card-img{
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+}
+.card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1s ease;
+}
+.collection-explore:hover .card-img img {
+  transform: scale(1.05);
 }
 /*PRODUCTOS*/
 .products-container {
@@ -361,24 +393,20 @@ header {
   max-width: 1088px;
   padding-top: 55px 20px;
 }
-
 .products-cards {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-
 .products-img {
   width: 100%;
   margin-bottom: 1rem;
 }
-
 .products-title {
   font-size: 1rem;
   margin-bottom: 0.75rem;
 }
-
 .products-price {
   color: var(--color-gris);
   font-weight: 500;
